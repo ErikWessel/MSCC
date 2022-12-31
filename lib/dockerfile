@@ -1,0 +1,7 @@
+FROM python:3.11-slim-bullseye
+
+WORKDIR /aimlsse/lib
+
+COPY . .
+
+RUN pip install --no-cache-dir aimlsse-api/

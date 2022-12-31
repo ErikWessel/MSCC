@@ -1,0 +1,19 @@
+services:
+  ground-data-service:
+    build: services/ground-data-service/
+    ports:
+      - "8000:8000"
+    volumes:
+      - ground-data-storage:/aimlsse/app/data
+  satellite-data-service:
+    build: services/satellite-data-service/
+    ports:
+      - "8010:8010"
+    volumes:
+      - satellite-grid-storage:/aimlsse/app/grid
+
+volumes:
+  ground-data-storage:
+    name: "aimlsse-ground-data-storage"
+  satellite-grid-storage:
+    name: "satellite-grid-storage"

@@ -10,10 +10,10 @@ services:
     ports:
       - "8010:8010"
     volumes:
-      - satellite-grid-storage:/aimlsse/app/grid
+      - satellite-data-storage:/aimlsse/app/data
 
 volumes:
   ground-data-storage:
     name: "aimlsse-ground-data-storage"
-  satellite-grid-storage:
-    name: "satellite-grid-storage"
+  satellite-data-storage:
+    name: "aimlsse-satellite-data-storage"

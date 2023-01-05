@@ -11,14 +11,14 @@ git clone --recurse-submodules git@git.scc.kit.edu:master-thesis-ai-ml-based-sup
 ```
 
 ## Setup
-All commands are expected to be issued from the root directory of this repository.
+*All commands are expected to be issued from the root directory of this repository.*
 
-Starting with the library [AIMLSSE-API](https://git.scc.kit.edu/master-thesis-ai-ml-based-support-for-satellite-exploration/aimlsse-api), a new docker image has to be built:
+First build the project:
 ```
-docker build lib -t aimlsse-base
+make
 ```
 
-Finally build the services from the `aimlsse-base` image and create their volumes:
+Then build the services from the `aimlsse-base` image and create their volumes:
 ```
 docker compose up
 ```

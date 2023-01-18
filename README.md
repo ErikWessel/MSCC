@@ -13,12 +13,21 @@ git clone --recurse-submodules git@git.scc.kit.edu:master-thesis-ai-ml-based-sup
 ## Setup
 *All commands are expected to be issued from the root directory of this repository.*
 
-First build the project:
+As long, as the [aimlsse-api](https://git.scc.kit.edu/master-thesis-ai-ml-based-support-for-satellite-exploration/aimlsse-api) is not available on [pypi.org](https://pypi.org) or if a local version should be used, it is necessary to build it and provide a local PyPI-server.
+
+First build the libraries:
 ```
 make
 ```
 
-Then build the services from the `aimlsse-base` image and create their volumes:
+To start a local PyPI-Server on port `8060`, run the following script:
+```
+start_pypi_server.sh
+```
+
+---
+
+To build and automatically configure the services, run:
 ```
 docker compose up
 ```

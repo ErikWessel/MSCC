@@ -1,6 +1,5 @@
 LIB_DIR ?= lib
-APP_TAG ?= aimlsse-base
-APP_VERSION ?= latest
+API_DIR ?= aimlsse-api
 
 build:
-	docker build ${LIB_DIR} --tag ${APP_TAG}:${APP_VERSION}
+	python -m build "${LIB_DIR}/aimlsse-api"

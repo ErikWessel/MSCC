@@ -11,9 +11,19 @@ services:
       - "8010:8010"
     volumes:
       - satellite-data-storage:/aimlsse/app/data
+  ground-db:
+    image: postgres
+    volumes:
+      - ground-db-storage:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=username
+      - POSTGRES_DB=database
 
 volumes:
   ground-data-storage:
     name: "aimlsse-ground-data-storage"
   satellite-data-storage:
     name: "aimlsse-satellite-data-storage"
+  ground-db-storage:
+    name: "aimlsse-ground-db-storage"

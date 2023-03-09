@@ -1,11 +1,22 @@
 services:
+  pypi-server:
+    image: pypiserver/pypiserver
+    volumes:
+      - ./packages:/data/packages
+    ports:
+      - "8060:8080"
   ground-data-service:
+    depends_on:
+      - pypi-server
+      - ground-db
     build: services/ground-data-service/
     ports:
       - "8000:8000"
     volumes:
       - ground-data-storage:/aimlsse/app/data
   satellite-data-service:
+    depends_on:
+      - pypi-server
     build: services/satellite-data-service/
     ports:
       - "8010:8010"

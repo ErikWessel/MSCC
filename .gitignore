@@ -1,1 +1,2 @@
-packages/
+# Docker Compose - environment variables are automatically generated
+.env

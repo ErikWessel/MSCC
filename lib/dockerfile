@@ -1,0 +1,9 @@
+FROM python:3.11-slim-bullseye
+
+WORKDIR /aimlsse
+
+RUN apt update
+RUN apt install make
+RUN pip install --upgrade pip
+
+CMD make

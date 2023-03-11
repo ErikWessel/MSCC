@@ -1,23 +1,23 @@
+version: "3.9"
 services:
-  pypi-server:
-    image: pypiserver/pypiserver
-    volumes:
-      - ./packages:/data/packages
-    ports:
-      - "8060:8080"
   ground-data-service:
-    depends_on:
-      - pypi-server
-      - ground-db
-    build: services/ground-data-service/
+    build:
+      context: services/ground-data-service/
+      network: host
+      args:
+        - PIP_EXTRA_INDEX_URL=${PIP_EXTRA_INDEX_URL}
+        - PIP_TRUSTED_HOST=${PIP_TRUSTED_HOST}
     ports:
       - "8000:8000"
     volumes:
       - ground-data-storage:/aimlsse/app/data
   satellite-data-service:
-    depends_on:
-      - pypi-server
-    build: services/satellite-data-service/
+    build:
+      context: services/satellite-data-service/
+      network: host
+      args:
+        - PIP_EXTRA_INDEX_URL=${PIP_EXTRA_INDEX_URL}
+        - PIP_TRUSTED_HOST=${PIP_TRUSTED_HOST}
     ports:
       - "8010:8010"
     volumes:

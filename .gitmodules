@@ -1,12 +1,12 @@
 [submodule "lib/aimlsse-api"]
 	path = lib/aimlsse-api
-	url = git@git.scc.kit.edu:master-thesis-ai-ml-based-support-for-satellite-exploration/aimlsse-api.git
+	url = git@github.com:ErikWessel/MSCC-API.git
 [submodule "services/ground-data-service"]
 	path = services/ground-data-service
-	url = git@git.scc.kit.edu:master-thesis-ai-ml-based-support-for-satellite-exploration/ground-data-service.git
+	url = git@github.com:ErikWessel/MSCC-METAR-Service.git
 [submodule "services/satellite-data-service"]
 	path = services/satellite-data-service
-	url = git@git.scc.kit.edu:master-thesis-ai-ml-based-support-for-satellite-exploration/satellite-data-service.git
+	url = git@github.com:ErikWessel/MSCC-Sentinel-2-Service.git
 [submodule "notebooks"]
 	path = notebooks
-	url = git@git.scc.kit.edu:master-thesis-ai-ml-based-support-for-satellite-exploration/notebooks.git
+	url = git@github.com:ErikWessel/MSCC-Notebooks.git
